@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velocity House — $99K • 99 Hours</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#C9A962;--gold-light:#E8D5A3;--gold-dark:#A68B4B;--black:#0A0A0A;--charcoal:#1A1A1A;--graphite:#2A2A2A;--slate:#4A4A4A;--ash:#6A6A6A;--silver:#9A9A9A;--cloud:#E5E5E5;--white:#FAFAFA;--success:#22C55E;--error:#EF4444;--shadow-gold:0 0 20px rgba(201,169,98,0.3);--shadow-gold-hover:0 0 30px rgba(201,169,98,0.5)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.5;color:var(--cloud);background:var(--black);-webkit-font-smoothing:antialiased}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.03;pointer-events:none;z-index:-1}
+    img,svg{display:block;max-width:100%}button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+    .container{width:100%;max-width:1280px;margin:0 auto;padding:0 1.5rem}
+    .section{padding:5rem 0}@media(min-width:768px){.section{padding:6rem 0}}@media(min-width:1024px){.section{padding:8rem 0}}
+    .section__header{text-align:center;margin-bottom:3rem;max-width:720px;margin-left:auto;margin-right:auto}
+    .section__eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+    .section__title{font-size:1.875rem;font-weight:700;letter-spacing:-0.025em;line-height:1.25;color:var(--white);margin-bottom:1rem}@media(min-width:768px){.section__title{font-size:2.25rem}}
+    .section__description{font-size:1.125rem;color:var(--silver);line-height:1.625}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1020;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.05)}
+    .nav__container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:1rem 1.5rem}
+    .nav__logo-text{font-size:1.125rem;font-weight:700;letter-spacing:-0.025em;color:var(--white)}
+    .nav__toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0.5rem}@media(min-width:768px){.nav__toggle{display:none}}
+    .nav__toggle-bar{width:24px;height:2px;background:var(--cloud);border-radius:9999px;transition:transform 0.2s,opacity 0.2s}
+    .nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2){opacity:0}
+    .nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--charcoal);padding:1.5rem;gap:0.25rem;border-bottom:1px solid var(--graphite)}
+    .nav__menu.is-open{display:flex}
+    @media(min-width:768px){.nav__menu{display:flex;flex-direction:row;position:static;background:none;padding:0;gap:2rem;border:none}}
+    .nav__link{display:block;padding:0.75rem 0;font-size:0.875rem;font-weight:500;color:var(--silver);transition:color 0.15s}@media(min-width:768px){.nav__link{padding:0.5rem 0}}
+    .nav__link:hover,.nav__link:focus{color:var(--white)}.nav__link:focus{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px}
+    .nav__link--cta{color:var(--gold)}.nav__link--cta:hover{color:var(--gold-light)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;letter-spacing:0.025em;line-height:1;border-radius:0.5rem;transition:all 0.2s;min-height:44px;position:relative}
+    .btn:focus{outline:2px solid var(--gold);outline-offset:2px}
+    .btn--primary{background:var(--gold);color:var(--black);box-shadow:var(--shadow-gold)}
+    .btn--primary:hover{background:var(--gold-light);box-shadow:var(--shadow-gold-hover);transform:translateY(-1px)}
+    .btn--primary:active{background:var(--gold-dark);transform:translateY(0)}
+    .btn--secondary{background:transparent;color:var(--cloud);border:1px solid var(--slate)}
+    .btn--secondary:hover{border-color:var(--cloud);background:rgba(255,255,255,0.05)}
+    .btn--full{width:100%}
+    .btn--loading{pointer-events:none}.btn--loading .btn__text{opacity:0}
+    .btn--loading .btn__loader{position:absolute;width:20px;height:20px;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;animation:spin 0.8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    
+    /* Hero with prominent branding */
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px;overflow:hidden}
+    .hero__container{width:100%;max-width:1280px;margin:0 auto;padding:3rem 1.5rem}@media(min-width:768px){.hero__container{padding:5rem 1.5rem}}
+    .hero__content{text-align:center;max-width:1000px;margin:0 auto}
+    
+    /* Prominent brand name */
+    .hero__brand{margin-bottom:2rem}
+    .hero__brand-name{font-size:3rem;font-weight:700;letter-spacing:-0.05em;color:var(--white);margin-bottom:0.5rem}
+    @media(min-width:640px){.hero__brand-name{font-size:4rem}}
+    @media(min-width:1024px){.hero__brand-name{font-size:5rem}}
+    .hero__brand-tagline{font-size:1rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
+    
+    .hero__headline{font-size:2rem;font-weight:700;letter-spacing:-0.05em;line-height:1.25;margin-bottom:1.5rem;color:var(--cloud)}
+    @media(min-width:640px){.hero__headline{font-size:2.5rem}}
+    @media(min-width:1024px){.hero__headline{font-size:3rem}}
+    .hero__headline-accent{color:var(--gold)}.hero__headline-separator{color:var(--slate);margin:0 0.5rem}
+    .hero__subheadline{font-size:1.125rem;color:var(--silver);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto}@media(min-width:768px){.hero__subheadline{font-size:1.25rem}}
+    .hero__ctas{display:flex;flex-direction:column;gap:1rem;justify-content:center;margin-bottom:3rem}@media(min-width:480px){.hero__ctas{flex-direction:row}}
+    .hero__trust{margin-top:2rem}
+    .trust-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}@media(min-width:768px){.trust-bar{gap:2.5rem}}
+    .trust-bar__item{display:flex;align-items:center;gap:0.5rem}
+    .trust-bar__icon{font-size:0.75rem;color:var(--gold)}
+    .trust-bar__text{font-size:0.875rem;color:var(--silver);font-weight:500}
+    .hero__gradient{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:150%;height:60%;background:radial-gradient(ellipse at center bottom,rgba(201,169,98,0.08) 0%,transparent 70%);pointer-events:none}
+    
+    /* Ecosystem Section */
+    .ecosystem{background:var(--charcoal)}
+    .ecosystem__grid{display:grid;grid-template-columns:1fr;gap:2rem;max-width:900px;margin:0 auto}
+    @media(min-width:768px){.ecosystem__grid{grid-template-columns:repeat(2,1fr)}}
+    .ecosystem-card{padding:2rem;background:var(--black);border-radius:1rem;border:1px solid var(--graphite);transition:border-color 0.2s,transform 0.2s}
+    .ecosystem-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+    .ecosystem-card__eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+    .ecosystem-card__title{font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:0.5rem}
+    .ecosystem-card__description{font-size:0.875rem;color:var(--silver);line-height:1.625;margin-bottom:1.5rem}
+    .ecosystem-card__link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:600;color:var(--gold);transition:color 0.15s}
+    .ecosystem-card__link:hover{color:var(--gold-light)}
+    .ecosystem-card__link svg{width:16px;height:16px}
+    
+    /* Portfolio */
+    .portfolio__filters{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;margin-bottom:2.5rem}
+    .filter-pill{padding:0.5rem 1rem;font-size:0.875rem;font-weight:500;color:var(--silver);background:transparent;border:1px solid var(--graphite);border-radius:9999px;transition:all 0.15s;min-height:44px}
+    .filter-pill:hover{border-color:var(--slate);color:var(--cloud)}.filter-pill:focus{outline:2px solid var(--gold);outline-offset:2px}
+    .filter-pill--active,.filter-pill[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--black)}
+    .portfolio__grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+    @media(min-width:640px){.portfolio__grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.portfolio__grid{grid-template-columns:repeat(3,1fr)}}
+    .portfolio-card{background:var(--charcoal);border-radius:1rem;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
+    .portfolio-card:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 20px 25px -5px rgba(0,0,0,0.3)}
+    .portfolio-card:focus{outline:2px solid var(--gold);outline-offset:2px}.portfolio-card.is-hidden{display:none}
+    .portfolio-card__image{position:relative;aspect-ratio:16/10;background:var(--graphite)}
+    .portfolio-card__placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:1.875rem;font-weight:700;color:var(--slate);background:linear-gradient(135deg,var(--graphite) 0%,var(--charcoal) 100%)}
+    .portfolio-card__badge{position:absolute;top:1rem;left:1rem;padding:0.25rem 0.75rem;font-size:0.75rem;font-weight:600;color:var(--gold);background:rgba(10,10,10,0.8);backdrop-filter:blur(4px);border-radius:9999px}
+    .portfolio-card__content{padding:1.5rem}
+    .portfolio-card__title{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+    .portfolio-card__description{font-size:0.875rem;color:var(--silver);line-height:1.625;margin-bottom:1rem}
+    .portfolio-card__meta{font-size:0.75rem;font-weight:500;color:var(--gold);letter-spacing:0.025em}
+    
+    /* Process */
+    .process__grid{display:grid;grid-template-columns:1fr;gap:2rem}
+    @media(min-width:640px){.process__grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.process__grid{grid-template-columns:repeat(4,1fr)}}
+    .process-step{text-align:center;padding:2rem;background:var(--charcoal);border-radius:1rem;border:1px solid var(--graphite);transition:border-color 0.2s}
+    .process-step:hover{border-color:var(--slate)}
+    .process-step__number{font-size:0.75rem;font-weight:700;color:var(--gold);letter-spacing:0.1em;margin-bottom:1rem}
+    .process-step__title{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:0.75rem}
+    .process-step__description{font-size:0.875rem;color:var(--silver);line-height:1.625}
+    
+    /* Timeline */
+    .timeline__visualization{max-width:800px;margin:0 auto 3rem}
+    .timeline__track{height:4px;background:var(--graphite);border-radius:9999px;overflow:hidden;margin-bottom:1rem}
+    .timeline__progress{height:100%;width:100%;background:linear-gradient(90deg,var(--gold-dark) 0%,var(--gold) 50%,var(--gold-light) 100%);border-radius:9999px}
+    .timeline__markers{display:flex;justify-content:space-between}
+    .timeline__marker{font-size:0.875rem;font-weight:600;color:var(--gold);letter-spacing:0.025em}
+    .timeline__stages{display:grid;gap:1rem;margin-bottom:3rem}@media(min-width:768px){.timeline__stages{gap:1.5rem}}
+    .timeline-stage{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;padding:1.5rem;background:var(--charcoal);border-radius:0.75rem;border-left:3px solid var(--gold)}
+    .timeline-stage__hours{font-size:1.125rem;font-weight:700;color:var(--gold);white-space:nowrap;min-width:60px}
+    .timeline-stage__title{font-size:1.125rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+    .timeline-stage__description{font-size:0.875rem;color:var(--silver);line-height:1.625}
+    .timeline__deliverables{max-width:600px;margin:0 auto;padding:2rem;background:var(--charcoal);border-radius:1rem;border:1px solid var(--graphite)}
+    .timeline__deliverables-title{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:1.5rem;text-align:center}
+    .timeline__deliverables-list{display:grid;gap:0.75rem}
+    .timeline__deliverables-list li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.875rem;color:var(--cloud)}
+    .timeline__deliverables-list li::before{content:'◆';color:var(--gold);font-size:0.75rem;margin-top:2px;flex-shrink:0}
+    
+    /* Pricing */
+    .pricing__content{max-width:560px;margin:0 auto}
+    .pricing__card{background:var(--charcoal);border-radius:1.5rem;border:1px solid var(--graphite);overflow:hidden}
+    .pricing__card-header{padding:2.5rem;text-align:center;background:linear-gradient(180deg,rgba(201,169,98,0.1) 0%,transparent 100%);border-bottom:1px solid var(--graphite)}
+    .pricing__amount{display:block;font-size:3rem;font-weight:700;color:var(--gold);letter-spacing:-0.025em;margin-bottom:0.5rem}
+    .pricing__period{font-size:0.875rem;color:var(--silver);font-weight:500}
+    .pricing__card-body{padding:2rem}
+    .pricing__section{margin-bottom:2rem}.pricing__section:last-child{margin-bottom:0}
+    .pricing__section-title{font-size:0.875rem;font-weight:600;color:var(--cloud);letter-spacing:0.025em;text-transform:uppercase;margin-bottom:1rem}
+    .pricing__list{display:grid;gap:0.75rem}
+    .pricing__list li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.875rem;color:var(--silver)}
+    .pricing__list--included li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+    .pricing__list--excluded li::before{content:'—';color:var(--slate);flex-shrink:0}
+    .pricing__card-footer{padding:2rem;padding-top:0}
+    .pricing__scarcity{margin-top:1rem;font-size:0.875rem;color:var(--ash);text-align:center}
+    
+    /* Founders - Side by Side */
+    .founders__grid{display:grid;grid-template-columns:1fr;gap:2rem;max-width:900px;margin:0 auto}@media(min-width:768px){.founders__grid{grid-template-columns:repeat(2,1fr)}}
+    .founder-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:2rem;background:var(--charcoal);border-radius:1rem;border:1px solid var(--graphite)}
+    .founder-card__image{width:120px;height:120px;border-radius:9999px;overflow:hidden;margin-bottom:1.5rem;border:2px solid var(--gold)}
+    .founder-card__placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:1.75rem;font-weight:700;color:var(--gold);background:var(--graphite)}
+    .founder-card__name{font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:0.25rem}
+    .founder-card__role{font-size:0.875rem;font-weight:500;color:var(--gold);margin-bottom:0.75rem}
+    .founder-card__org{font-size:0.75rem;color:var(--silver);margin-bottom:1rem}
+    .founder-card__org a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+    .founder-card__org a:hover{color:var(--gold-light)}
+    .founder-card__bio{font-size:0.875rem;color:var(--silver);line-height:1.625;margin-bottom:1.5rem}
+    .founder-card__linkedin{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:500;color:var(--gold);transition:color 0.15s}
+    .founder-card__linkedin:hover{color:var(--gold-light)}
+    .founder-card__linkedin svg{width:18px;height:18px}
+    
+    /* Inquiry Form */
+    .inquire{background:var(--charcoal)}
+    .inquire__form-wrapper{max-width:560px;margin:0 auto}
+    .inquiry-form{background:var(--black);border-radius:1rem;border:1px solid var(--graphite);padding:2rem}
+    .inquiry-form__progress{display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem}
+    .inquiry-form__progress-step{display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+    .inquiry-form__progress-number{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:600;color:var(--slate);background:var(--graphite);border-radius:9999px;transition:all 0.2s}
+    .inquiry-form__progress-step--active .inquiry-form__progress-number,.inquiry-form__progress-step--completed .inquiry-form__progress-number{background:var(--gold);color:var(--black)}
+    .inquiry-form__progress-label{font-size:0.75rem;color:var(--slate);font-weight:500;transition:color 0.2s}
+    .inquiry-form__progress-step--active .inquiry-form__progress-label{color:var(--cloud)}
+    .inquiry-form__progress-connector{width:60px;height:2px;background:var(--graphite);margin:0 1rem;margin-bottom:1.5rem}
+    @media(max-width:480px){.inquiry-form__progress-connector{width:30px;margin:0 0.5rem;margin-bottom:1.5rem}.inquiry-form__progress-label{display:none}}
+    .inquiry-form__step{display:none;border:none}.inquiry-form__step--active{display:block}
+    .inquiry-form__step-title{font-size:1.125rem;font-weight:600;color:var(--white);margin-bottom:1.5rem}
+    .form-field{margin-bottom:1.5rem}
+    .form-field__label{display:block;font-size:0.875rem;font-weight:500;color:var(--cloud);margin-bottom:0.5rem}
+    .form-field__required{color:var(--gold)}
+    .form-field__input,.form-field__textarea,.form-field__select{width:100%;padding:0.75rem 1rem;font-size:1rem;color:var(--cloud);background:var(--graphite);border:1px solid var(--slate);border-radius:0.5rem;transition:border-color 0.15s,box-shadow 0.15s;min-height:48px}
+    .form-field__textarea{resize:vertical;min-height:120px}
+    .form-field__select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239A9A9A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+    .form-field__input:hover,.form-field__textarea:hover,.form-field__select:hover{border-color:var(--ash)}
+    .form-field__input:focus,.form-field__textarea:focus,.form-field__select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,98,0.15)}
+    .form-field__input::placeholder,.form-field__textarea::placeholder{color:var(--ash)}
+    .form-field__input[aria-invalid="true"],.form-field__textarea[aria-invalid="true"],.form-field__select[aria-invalid="true"]{border-color:var(--error)}
+    .form-field__hint{display:block;font-size:0.75rem;color:var(--ash);margin-top:0.5rem}
+    .form-field__error{display:block;font-size:0.75rem;color:var(--error);margin-top:0.5rem;min-height:1.25em}
+    .form-field--checkbox{display:flex;flex-wrap:wrap;align-items:flex-start;gap:0.75rem}
+    .form-field__checkbox{width:20px;height:20px;margin:0;accent-color:var(--gold);cursor:pointer;flex-shrink:0}
+    .form-field__checkbox-label{font-size:0.875rem;color:var(--cloud);cursor:pointer;flex:1}
+    .form-field__nda-note{width:100%;font-size:0.75rem;color:var(--ash);background:var(--graphite);padding:1rem;border-radius:0.5rem;margin-top:0.75rem;line-height:1.625}
+    .inquiry-form__actions{display:flex;gap:1rem;margin-top:2rem}.inquiry-form__actions .btn{flex:1}
+    .inquiry-form__success{text-align:center;padding:2rem 0}
+    .inquiry-form__success-icon{width:64px;height:64px;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;background:rgba(34,197,94,0.15);border-radius:9999px;color:var(--success)}
+    .inquiry-form__success-icon svg{width:32px;height:32px}
+    .inquiry-form__success-title{font-size:1.5rem;font-weight:600;color:var(--white);margin-bottom:0.75rem}
+    .inquiry-form__success-message{font-size:1rem;color:var(--silver);margin-bottom:2rem}
+    .inquiry-form__success-next{display:grid;gap:0.75rem;text-align:left;max-width:360px;margin:0 auto}
+    .inquiry-form__success-next li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.875rem;color:var(--cloud)}
+    .inquiry-form__success-next li::before{content:'→';color:var(--gold);flex-shrink:0}
+    .inquire__alternative{margin-top:2rem;text-align:center}
+    .inquire__alternative p{font-size:0.875rem;color:var(--ash);margin-bottom:0.5rem}
+    .inquire__email{font-size:1rem;font-weight:500;color:var(--gold);transition:color 0.15s}.inquire__email:hover{color:var(--gold-light)}
+    
+    /* Footer */
+    .footer{padding:3rem 0;border-top:1px solid var(--graphite)}
+    .footer__content{text-align:center}
+    .footer__copyright{font-size:0.875rem;color:var(--silver);margin-bottom:0.5rem}
+    .footer__credo{font-size:0.875rem;color:var(--ash);font-style:italic}
+    
+    /* Modal */
+    .modal{position:fixed;inset:0;z-index:1050;display:flex;align-items:center;justify-content:center;padding:1rem}
+    .modal[hidden]{display:none}
+    .modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(4px)}
+    .modal__container{position:relative;width:100%;max-width:600px;max-height:90vh;overflow-y:auto}
+    .modal__content{background:var(--charcoal);border-radius:1rem;border:1px solid var(--graphite)}
+    .modal__close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--silver);background:var(--graphite);border-radius:9999px;transition:all 0.15s;z-index:1}
+    .modal__close:hover{color:var(--white);background:var(--slate)}.modal__close:focus{outline:2px solid var(--gold);outline-offset:2px}.modal__close svg{width:20px;height:20px}
+    .modal__header{padding:2rem;padding-right:4rem;border-bottom:1px solid var(--graphite)}
+    .modal__badge{display:inline-block;padding:0.25rem 0.75rem;font-size:0.75rem;font-weight:600;color:var(--gold);background:rgba(201,169,98,0.15);border-radius:9999px;margin-bottom:0.75rem}
+    .modal__title{font-size:1.5rem;font-weight:700;color:var(--white)}
+    .modal__body{padding:2rem}
+    .modal__section{margin-bottom:1.5rem}.modal__section:last-of-type{margin-bottom:0}
+    .modal__section-title{font-size:0.75rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem}
+    .modal__section-content{font-size:0.875rem;color:var(--silver);line-height:1.625}
+    .modal__meta{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--graphite)}
+    .modal__meta-item{font-size:0.875rem;color:var(--cloud)}.modal__meta-item strong{color:var(--gold)}
+    .modal__footer{padding:1.5rem 2rem;border-top:1px solid var(--graphite)}
+    
+    /* Animations */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s}.reveal.is-visible{opacity:1;transform:translateY(0)}
+    .reveal--delay-1{transition-delay:100ms}.reveal--delay-2{transition-delay:200ms}.reveal--delay-3{transition-delay:300ms}.reveal--delay-4{transition-delay:400ms}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <nav class="nav__container">
+      <a href="#" class="nav__logo"><span class="nav__logo-text">Velocity House</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#ecosystem" class="nav__link">Ecosystem</a></li>
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#timeline" class="nav__link">99 Hours</a></li>
+        <li><a href="#pricing" class="nav__link">Pricing</a></li>
+        <li><a href="#inquire" class="nav__link nav__link--cta">Inquire</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero with Prominent Brand -->
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content reveal">
+          <div class="hero__brand">
+            <h1 class="hero__brand-name">Velocity House</h1>
+            <p class="hero__brand-tagline">AI-Accelerated Venture Studio</p>
+          </div>
+          <p class="hero__headline">
+            <span class="hero__headline-accent">$99K</span>
+            <span class="hero__headline-separator">•</span>
+            <span class="hero__headline-accent">99 Hours</span>
+            <span class="hero__headline-separator">•</span>
+            <span>0% Equity</span>
+          </p>
+          <p class="hero__subheadline">From brief to revenue-ready company. Sophisticated products shipped with precision.</p>
+          <div class="hero__ctas">
+            <a href="#inquire" class="btn btn--primary">Request a Build Slot</a>
+            <a href="#portfolio" class="btn btn--secondary">View Portfolio</a>
+          </div>
+        </div>
+        <div class="hero__trust reveal reveal--delay-1">
+          <div class="trust-bar">
+            <div class="trust-bar__item"><span class="trust-bar__icon">◆</span><span class="trust-bar__text">Prototype-first</span></div>
+            <div class="trust-bar__item"><span class="trust-bar__icon">◆</span><span class="trust-bar__text">NDA-gated proposals</span></div>
+            <div class="trust-bar__item"><span class="trust-bar__icon">◆</span><span class="trust-bar__text">Operator-grade execution</span></div>
+            <div class="trust-bar__item"><span class="trust-bar__icon">◆</span><span class="trust-bar__text">99-hour delivery discipline</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__gradient"></div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="section ecosystem">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">The Network</p>
+          <h2 class="section__title">Built on a Global Ecosystem</h2>
+          <p class="section__description">Velocity House is powered by two complementary platforms.</p>
+        </header>
+        <div class="ecosystem__grid">
+          <div class="ecosystem-card reveal">
+            <p class="ecosystem-card__eyebrow">Global Investment Network</p>
+            <h3 class="ecosystem-card__title">Upper Echelon</h3>
+            <p class="ecosystem-card__description">Jesse Witkowski's global investment network connecting founders, capital, and talent across borders. Access to curated deal flow, expert networks, and strategic partnerships.</p>
+            <a href="https://uemembers.com" target="_blank" rel="noopener noreferrer" class="ecosystem-card__link">
+              Visit uemembers.com
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="ecosystem-card reveal reveal--delay-1">
+            <p class="ecosystem-card__eyebrow">ADGM Registered Fund</p>
+            <h3 class="ecosystem-card__title">Vitality Capital</h3>
+            <p class="ecosystem-card__description">Rummana Dada's Abu Dhabi-based permanent capital vehicle focused on healthcare, longevity, energy, and AI. Follow-on investment for aligned Velocity House builds.</p>
+            <a href="https://vitality.capital" target="_blank" rel="noopener noreferrer" class="ecosystem-card__link">
+              Visit vitality.capital
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Selected Work</p>
+          <h2 class="section__title">Active Projects</h2>
+          <p class="section__description">Products currently in development through Velocity House.</p>
+        </header>
+        <div class="portfolio__grid">
+          <article class="portfolio-card reveal" data-industry="legal" tabindex="0">
+            <div class="portfolio-card__image"><div class="portfolio-card__placeholder"><span>LB</span></div><span class="portfolio-card__badge">Legal AI</span></div>
+            <div class="portfolio-card__content"><h3 class="portfolio-card__title">LawBud</h3><p class="portfolio-card__description">AI-powered legal assistant making legal advice accessible. Natural language interface for legal research and document analysis.</p><span class="portfolio-card__meta">Build Time: 99 Hours</span></div>
+          </article>
+          <article class="portfolio-card reveal reveal--delay-1" data-industry="intelligence" tabindex="0">
+            <div class="portfolio-card__image"><div class="portfolio-card__placeholder"><span>WI</span></div><span class="portfolio-card__badge">Intelligence</span></div>
+            <div class="portfolio-card__content"><h3 class="portfolio-card__title">WhatsIntel</h3><p class="portfolio-card__description">Enterprise intelligence platform extracting actionable insights from communication data. Network analysis and signal detection at scale.</p><span class="portfolio-card__meta"><a href="https://whatsintel.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">whatsintel.com</a></span></div>
+          </article>
+          <article class="portfolio-card reveal reveal--delay-2" data-industry="network" tabindex="0">
+            <div class="portfolio-card__image"><div class="portfolio-card__placeholder"><span>UE</span></div><span class="portfolio-card__badge">Investment Network</span></div>
+            <div class="portfolio-card__content"><h3 class="portfolio-card__title">Upper Echelon</h3><p class="portfolio-card__description">Global investment network connecting founders, capital, and talent across borders. Curated deal flow, expert networks, and strategic partnerships.</p><span class="portfolio-card__meta"><a href="https://uemembers.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">uemembers.com</a></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section process">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Our Methodology</p>
+          <h2 class="section__title">The Velocity House Process</h2>
+          <p class="section__description">Structured precision from first conversation to deployed product.</p>
+        </header>
+        <div class="process__grid">
+          <div class="process-step reveal"><div class="process-step__number">01</div><h3 class="process-step__title">Discover</h3><p class="process-step__description">We immerse in your vision, market, and constraints. Deep alignment before a single line of code.</p></div>
+          <div class="process-step reveal reveal--delay-1"><div class="process-step__number">02</div><h3 class="process-step__title">Prototype</h3><p class="process-step__description">Interactive prototype delivery. You experience the product before committing to a build.</p></div>
+          <div class="process-step reveal reveal--delay-2"><div class="process-step__number">03</div><h3 class="process-step__title">Proposal</h3><p class="process-step__description">NDA-gated proposals with full scope transparency. No surprises, no ambiguity.</p></div>
+          <div class="process-step reveal reveal--delay-3"><div class="process-step__number">04</div><h3 class="process-step__title">Build</h3><p class="process-step__description">99 hours of concentrated execution. Deployed, documented, handed off.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 99-Hour Timeline Section -->
+    <section id="timeline" class="section timeline">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">The Signature Build</p>
+          <h2 class="section__title">99 Hours of Precision</h2>
+          <p class="section__description">We compress build cycles into 99 hours without compromising craft.</p>
+        </header>
+        <div class="timeline__visualization reveal">
+          <div class="timeline__track"><div class="timeline__progress"></div></div>
+          <div class="timeline__markers"><span class="timeline__marker">Hour 0</span><span class="timeline__marker">Hour 99</span></div>
+        </div>
+        <div class="timeline__stages">
+          <div class="timeline-stage reveal"><div class="timeline-stage__hours">0–8</div><div class="timeline-stage__content"><h3 class="timeline-stage__title">Intake & Alignment</h3><p class="timeline-stage__description">Deep discovery, requirement crystallization, technical architecture decisions.</p></div></div>
+          <div class="timeline-stage reveal reveal--delay-1"><div class="timeline-stage__hours">9–24</div><div class="timeline-stage__content"><h3 class="timeline-stage__title">Architecture & Prototype</h3><p class="timeline-stage__description">System design, data modeling, interactive prototype refinement.</p></div></div>
+          <div class="timeline-stage reveal reveal--delay-2"><div class="timeline-stage__hours">25–48</div><div class="timeline-stage__content"><h3 class="timeline-stage__title">Core Build & Systems</h3><p class="timeline-stage__description">Primary feature development, API integration, database implementation.</p></div></div>
+          <div class="timeline-stage reveal reveal--delay-3"><div class="timeline-stage__hours">49–72</div><div class="timeline-stage__content"><h3 class="timeline-stage__title">UX Polish & Edge Cases</h3><p class="timeline-stage__description">Interface refinement, error handling, accessibility compliance.</p></div></div>
+          <div class="timeline-stage reveal reveal--delay-4"><div class="timeline-stage__hours">73–99</div><div class="timeline-stage__content"><h3 class="timeline-stage__title">QA, Deploy & Handoff</h3><p class="timeline-stage__description">Testing, deployment, documentation, knowledge transfer.</p></div></div>
+        </div>
+        <div class="timeline__deliverables reveal">
+          <h3 class="timeline__deliverables-title">What You Receive</h3>
+          <ul class="timeline__deliverables-list">
+            <li>Production-ready MVP deployed to your infrastructure</li>
+            <li>Complete source code with documentation</li>
+            <li>Design system and component library</li>
+            <li>API documentation and integration guides</li>
+            <li>30-day post-launch support window</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Investment</p>
+          <h2 class="section__title">$99,000 — 99 Hours</h2>
+          <p class="section__description">A Sophisticated MVP</p>
+        </header>
+        <div class="pricing__content">
+          <div class="pricing__card reveal">
+            <div class="pricing__card-header"><span class="pricing__amount">$99K</span><span class="pricing__period">Fixed Investment • 0% Equity</span></div>
+            <div class="pricing__card-body">
+              <div class="pricing__section"><h3 class="pricing__section-title">What's Included</h3><ul class="pricing__list pricing__list--included"><li>99 hours of dedicated build time</li><li>Senior engineering and design team</li><li>Interactive prototype before commitment</li><li>Full source code ownership</li><li>Production deployment</li><li>Documentation and handoff</li><li>30-day support window</li></ul></div>
+              <div class="pricing__section"><h3 class="pricing__section-title">What's Not Included</h3><ul class="pricing__list pricing__list--excluded"><li>Ongoing maintenance (available separately)</li><li>Third-party service costs</li><li>Scope beyond agreed deliverables</li><li>Extended timeline requests</li></ul></div>
+            </div>
+            <div class="pricing__card-footer"><a href="#inquire" class="btn btn--primary btn--full">Request a Build Slot</a><p class="pricing__scarcity">Limited build slots per month.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders Section - Rummana First (Left), Jesse Second (Right) -->
+    <section id="founders" class="section founders">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Leadership</p>
+          <h2 class="section__title">The Operators</h2>
+        </header>
+        <div class="founders__grid">
+          <!-- Rummana - Left -->
+          <article class="founder-card reveal">
+            <div class="founder-card__image"><div class="founder-card__placeholder">RD</div></div>
+            <div class="founder-card__content">
+              <h3 class="founder-card__name">Rummana Dada</h3>
+              <p class="founder-card__role">Co-Founder & Operator</p>
+              <p class="founder-card__org">Founder, <a href="https://vitality.capital" target="_blank" rel="noopener noreferrer">Vitality Capital</a> (ADGM)</p>
+              <p class="founder-card__bio">Venture-backed founder turned studio operator. Deep expertise in product strategy, market positioning, and founder psychology. Runs a permanent capital vehicle focused on healthcare, longevity, energy, and AI. Makes complex things ship.</p>
+              <a href="https://www.linkedin.com/in/romannadada/" target="_blank" rel="noopener noreferrer" class="founder-card__linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </article>
+          <!-- Jesse - Right -->
+          <article class="founder-card reveal reveal--delay-1">
+            <div class="founder-card__image"><div class="founder-card__placeholder">JW</div></div>
+            <div class="founder-card__content">
+              <h3 class="founder-card__name">Jesse Witkowski</h3>
+              <p class="founder-card__role">Co-Founder & Builder</p>
+              <p class="founder-card__org">Founder, <a href="https://uemembers.com" target="_blank" rel="noopener noreferrer">Upper Echelon</a></p>
+              <p class="founder-card__bio">Published author with multiple books on AI, AGI, and building with AI. Runs a global investment network connecting founders, capital, and talent. Obsessed with compressing timelines without sacrificing quality.</p>
+              <a href="https://www.linkedin.com/in/jesse-witkowski/" target="_blank" rel="noopener noreferrer" class="founder-card__linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inquiry Form Section -->
+    <section id="inquire" class="section inquire">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Get Started</p>
+          <h2 class="section__title">Request a Build Slot</h2>
+          <p class="section__description">Tell us what you're building. We respond within 24 hours.</p>
+        </header>
+        <div class="inquire__form-wrapper reveal">
+          <form id="inquiry-form" class="inquiry-form" novalidate>
+            <div class="inquiry-form__progress">
+              <div class="inquiry-form__progress-step inquiry-form__progress-step--active" data-step="1"><span class="inquiry-form__progress-number">1</span><span class="inquiry-form__progress-label">Contact</span></div>
+              <div class="inquiry-form__progress-connector"></div>
+              <div class="inquiry-form__progress-step" data-step="2"><span class="inquiry-form__progress-number">2</span><span class="inquiry-form__progress-label">Project</span></div>
+              <div class="inquiry-form__progress-connector"></div>
+              <div class="inquiry-form__progress-step" data-step="3"><span class="inquiry-form__progress-number">3</span><span class="inquiry-form__progress-label">Details</span></div>
+            </div>
+            <fieldset class="inquiry-form__step inquiry-form__step--active" data-step="1">
+              <legend class="inquiry-form__step-title">Contact Information</legend>
+              <div class="form-field"><label for="full-name" class="form-field__label">Full Name <span class="form-field__required">*</span></label><input type="text" id="full-name" name="fullName" class="form-field__input" required><span id="full-name-error" class="form-field__error"></span></div>
+              <div class="form-field"><label for="email" class="form-field__label">Email <span class="form-field__required">*</span></label><input type="email" id="email" name="email" class="form-field__input" required><span id="email-error" class="form-field__error"></span></div>
+              <div class="form-field"><label for="company" class="form-field__label">Company / Project Name <span class="form-field__required">*</span></label><input type="text" id="company" name="company" class="form-field__input" required><span id="company-error" class="form-field__error"></span></div>
+              <div class="inquiry-form__actions"><button type="button" class="btn btn--primary" data-action="next">Continue</button></div>
+            </fieldset>
+            <fieldset class="inquiry-form__step" data-step="2">
+              <legend class="inquiry-form__step-title">Project Information</legend>
+              <div class="form-field"><label for="description" class="form-field__label">What are you building? <span class="form-field__required">*</span></label><textarea id="description" name="description" class="form-field__textarea" rows="4" required placeholder="Describe your product vision, target users, and core functionality..."></textarea><span class="form-field__hint">Be as specific as possible. This helps us assess fit.</span><span id="description-error" class="form-field__error"></span></div>
+              <div class="form-field"><label for="industry" class="form-field__label">Industry <span class="form-field__required">*</span></label><select id="industry" name="industry" class="form-field__select" required><option value="">Select an industry</option><option value="fintech">FinTech</option><option value="ai">AI / Machine Learning</option><option value="healthcare">Healthcare</option><option value="enterprise">Enterprise Software</option><option value="consumer">Consumer</option><option value="marketplace">Marketplace</option><option value="saas">SaaS</option><option value="other">Other</option></select><span id="industry-error" class="form-field__error"></span></div>
+              <div class="inquiry-form__actions"><button type="button" class="btn btn--secondary" data-action="prev">Back</button><button type="button" class="btn btn--primary" data-action="next">Continue</button></div>
+            </fieldset>
+            <fieldset class="inquiry-form__step" data-step="3">
+              <legend class="inquiry-form__step-title">Timeline & Budget</legend>
+              <div class="form-field"><label for="timeline" class="form-field__label">Timeline Urgency <span class="form-field__required">*</span></label><select id="timeline" name="timeline" class="form-field__select" required><option value="">Select timeline</option><option value="immediate">Immediate (within 2 weeks)</option><option value="soon">Soon (within 1 month)</option><option value="planning">Planning (1-3 months)</option><option value="exploring">Exploring (3+ months)</option></select><span id="timeline-error" class="form-field__error"></span></div>
+              <div class="form-field"><label for="budget" class="form-field__label">Budget Readiness <span class="form-field__required">*</span></label><select id="budget" name="budget" class="form-field__select" required><option value="">Select budget status</option><option value="aligned">Aligned with $99K • 99 Hours</option><option value="exploring">Exploring options</option><option value="fundraising">Currently fundraising</option><option value="flexible">Flexible based on scope</option></select><span id="budget-error" class="form-field__error"></span></div>
+              <div class="form-field form-field--checkbox"><input type="checkbox" id="confidential" name="confidential" class="form-field__checkbox"><label for="confidential" class="form-field__checkbox-label">This project involves confidential information</label><p id="confidential-note" class="form-field__nda-note" hidden>We take confidentiality seriously. All discussions are protected under our standard NDA, which we'll provide upon first meeting.</p></div>
+              <div class="inquiry-form__actions"><button type="button" class="btn btn--secondary" data-action="prev">Back</button><button type="submit" class="btn btn--primary"><span class="btn__text">Submit Inquiry</span><span class="btn__loader"></span></button></div>
+            </fieldset>
+            <div class="inquiry-form__success" hidden>
+              <div class="inquiry-form__success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3 class="inquiry-form__success-title">Inquiry Received</h3>
+              <p class="inquiry-form__success-message">Thank you for your interest in Velocity House.</p>
+              <ul class="inquiry-form__success-next"><li>We respond within 24 hours.</li><li>If aligned, we'll propose a build slot.</li><li>You'll receive an interactive prototype before any commitment.</li></ul>
+            </div>
+          </form>
+          <div class="inquire__alternative"><p>Prefer email? Reach us directly at</p><a href="mailto:inquiries@velocityhouse.studio" class="inquire__email">inquiries@velocityhouse.studio</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><div class="footer__content"><p class="footer__copyright">© <span id="current-year"></span> Velocity House</p><p class="footer__credo">Building what matters. Shipping what works.</p></div></div>
+  </footer>
+
+  <div class="modal" id="portfolio-modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal__backdrop"></div>
+    <div class="modal__container">
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <header class="modal__header"><span class="modal__badge" id="modal-badge"></span><h2 class="modal__title" id="modal-title"></h2></header>
+        <div class="modal__body">
+          <div class="modal__section"><h3 class="modal__section-title">The Problem</h3><p class="modal__section-content" id="modal-problem"></p></div>
+          <div class="modal__section"><h3 class="modal__section-title">The Solution</h3><p class="modal__section-content" id="modal-solution"></p></div>
+          <div class="modal__section"><h3 class="modal__section-title">The Outcomes</h3><p class="modal__section-content" id="modal-outcomes"></p></div>
+          <div class="modal__meta"><span class="modal__meta-item"><strong>Build Time:</strong> 99 Hours</span></div>
+        </div>
+        <footer class="modal__footer"><a href="#inquire" class="btn btn--primary modal__cta">Build Something Like This</a></footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+(function(){
+  const PORTFOLIO_DATA={
+    'LawBud':{industry:'Legal AI',problem:'Legal advice remains inaccessible and expensive for most individuals and small businesses, creating a justice gap.',solution:'An AI-powered legal assistant providing natural language legal research, document analysis, and guidance at a fraction of traditional costs.',outcomes:'Making legal information accessible. Reducing time to legal insight from days to minutes.'},
+    'WhatsIntel':{industry:'Intelligence',problem:'Organizations struggle to extract actionable intelligence from high-volume communication data, missing critical signals.',solution:'Enterprise intelligence platform that analyzes communication patterns, detects signals, and surfaces insights through network analysis.',outcomes:'Transforming communication data into strategic intelligence. Real-time signal detection at scale.'},
+    'Upper Echelon':{industry:'Investment Network',problem:'Founders, capital, and talent operate in silos, missing opportunities for strategic connection and collaboration.',solution:'A curated global investment network that connects high-quality founders with aligned capital providers and expert talent.',outcomes:'Building bridges across borders. Facilitating deals, partnerships, and talent placement at scale.'}
+  };
+  const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+  const prefersReducedMotion=()=>window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Nav toggle
+  const toggle=$('.nav__toggle'),menu=$('.nav__menu');
+  if(toggle&&menu){toggle.addEventListener('click',()=>{const o=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',!o);menu.classList.toggle('is-open',!o)});$$('.nav__link').forEach(l=>l.addEventListener('click',()=>{toggle.setAttribute('aria-expanded','false');menu.classList.remove('is-open')}));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('is-open')){toggle.setAttribute('aria-expanded','false');menu.classList.remove('is-open');toggle.focus()}})}
+
+  // Smooth scroll
+  $$('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h==='#')return;const t=$(h);if(t){e.preventDefault();const top=t.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top,behavior:prefersReducedMotion()?'auto':'smooth'})}})});
+
+  // Portfolio modal
+  const modal=$('#portfolio-modal'),backdrop=$('.modal__backdrop',modal),closeBtn=$('.modal__close',modal),cta=$('.modal__cta',modal),cards=$$('.portfolio-card');
+  let lastFocused=null;
+  const openModal=card=>{lastFocused=document.activeElement;const t=$('.portfolio-card__title',card).textContent,b=$('.portfolio-card__badge',card).textContent,d=PORTFOLIO_DATA[t]||{};$('#modal-title').textContent=t;$('#modal-badge').textContent=b;$('#modal-problem').textContent=d.problem||'';$('#modal-solution').textContent=d.solution||'';$('#modal-outcomes').textContent=d.outcomes||'';modal.hidden=false;document.body.style.overflow='hidden';closeBtn.focus()};
+  const closeModal=()=>{modal.hidden=true;document.body.style.overflow='';if(lastFocused)lastFocused.focus()};
+  cards.forEach(c=>{c.addEventListener('click',()=>openModal(c));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(c)}})});
+  closeBtn.addEventListener('click',closeModal);backdrop.addEventListener('click',closeModal);cta.addEventListener('click',closeModal);
+  document.addEventListener('keydown',e=>{if(!modal.hidden&&e.key==='Escape')closeModal()});
+
+  // Form
+  const form=$('#inquiry-form');
+  if(form){
+    const steps=$$('.inquiry-form__step',form),progressSteps=$$('.inquiry-form__progress-step',form),progressBar=$('.inquiry-form__progress',form),success=$('.inquiry-form__success',form),confCb=$('#confidential'),ndaNote=$('#confidential-note');
+    let currentStep=1;
+    const rules={fullName:{required:true,minLength:2,msg:'Please enter your full name'},email:{required:true,pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/,msg:'Please enter a valid email'},company:{required:true,minLength:2,msg:'Please enter company name'},description:{required:true,minLength:20,msg:'Describe your project (20+ chars)'},industry:{required:true,msg:'Please select an industry'},timeline:{required:true,msg:'Please select timeline'},budget:{required:true,msg:'Please select budget status'}};
+    const getFields=n=>$$('input:not([type="checkbox"]),textarea,select',steps[n-1]);
+    const validateField=f=>{const r=rules[f.name],err=$(`#${f.id}-error`);if(!r)return true;const v=f.value.trim();let ok=true;if(r.required&&!v)ok=false;else if(r.minLength&&v.length<r.minLength)ok=false;else if(r.pattern&&!r.pattern.test(v))ok=false;f.setAttribute('aria-invalid',!ok);if(err)err.textContent=ok?'':r.msg;return ok};
+    const validateStep=n=>{let ok=true;getFields(n).forEach(f=>{if(!validateField(f))ok=false});return ok};
+    const updateProgress=n=>{progressSteps.forEach((s,i)=>{s.classList.remove('inquiry-form__progress-step--active','inquiry-form__progress-step--completed');if(i+1===n)s.classList.add('inquiry-form__progress-step--active');else if(i+1<n)s.classList.add('inquiry-form__progress-step--completed')})};
+    const goToStep=n=>{if(n<1||n>steps.length)return;steps.forEach((s,i)=>s.classList.toggle('inquiry-form__step--active',i===n-1));currentStep=n;updateProgress(n);const ff=getFields(n)[0];if(ff)setTimeout(()=>ff.focus(),100)};
+    form.addEventListener('click',e=>{const a=e.target.dataset.action;if(a==='next'&&validateStep(currentStep))goToStep(currentStep+1);else if(a==='prev')goToStep(currentStep-1)});
+    if(confCb&&ndaNote)confCb.addEventListener('change',()=>{ndaNote.hidden=!confCb.checked});
+    form.addEventListener('blur',e=>{if(e.target.matches('input,textarea,select'))validateField(e.target)},true);
+    form.addEventListener('submit',async e=>{e.preventDefault();if(!validateStep(currentStep))return;const btn=$('button[type="submit"]',form);btn.classList.add('btn--loading');btn.disabled=true;const fd=new FormData(form);const data={id:Date.now(),timestamp:new Date().toISOString(),fullName:fd.get('fullName'),email:fd.get('email'),company:fd.get('company'),description:fd.get('description'),industry:fd.get('industry'),timeline:fd.get('timeline'),budget:fd.get('budget'),confidential:fd.get('confidential')==='on'};await new Promise(r=>setTimeout(r,1500));try{const ex=JSON.parse(localStorage.getItem('vh_inquiries')||'[]');ex.push(data);localStorage.setItem('vh_inquiries',JSON.stringify(ex))}catch(err){}steps.forEach(s=>s.classList.remove('inquiry-form__step--active'));progressBar.hidden=true;success.hidden=false;success.scrollIntoView({behavior:prefersReducedMotion()?'auto':'smooth',block:'center'})});
+  }
+
+  // Scroll reveal
+  if(prefersReducedMotion())$$('.reveal').forEach(el=>el.classList.add('is-visible'));
+  else{const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});$$('.reveal').forEach(el=>obs.observe(el))}
+
+  // Footer year
+  const y=$('#current-year');if(y)y.textContent=new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>
